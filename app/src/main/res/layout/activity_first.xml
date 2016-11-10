@@ -10,5 +10,22 @@
         android:layout_height="wrap_content"
         android:text="ViewVideo"
         />
-
+    <Button
+        android:id="@+id/mp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mediaplayer基本功能"
+        />
+    <Button
+        android:id="@+id/mp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mediaplayer封装播放本地"
+        />
+    <Button
+        android:id="@+id/mp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mediaplayer封装播放网络URL"
+        />
 </LinearLayout>

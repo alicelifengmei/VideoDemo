@@ -35,7 +35,7 @@ public class UniversalVideoActivity extends AppCompatActivity implements Univers
     private static final String TAG = "UniversalVideoActivity";
     private static final String SEEK_POSITION_KEY = "SEEK_POSITION_KEY";
 //    private static final String VIDEO_URL = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
-    private static final String VIDEO_URL = "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov";
+    private String VIDEO_URL = "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov";
 //    private static final String VIDEO_URL = Environment.getExternalStorageDirectory().getPath()+"/test.mp4";
 //    private static final String VIDEO_URL = "http://www.androidbook.com/akc/filestorage/android/documentfiles/3389/movie.mp4";
 
@@ -54,6 +54,13 @@ public class UniversalVideoActivity extends AppCompatActivity implements Univers
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_universal_video);
+        int from = getIntent().getIntExtra("from",1);
+        if(from == 1){
+            VIDEO_URL = Environment.getExternalStorageDirectory().getPath()+"/test.mp4";
+        }else{
+            VIDEO_URL = "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov";
+
+        }
 
         mVideoLayout = findViewById(R.id.video_layout);
         mBottomLayout = findViewById(R.id.bottom_layout);
