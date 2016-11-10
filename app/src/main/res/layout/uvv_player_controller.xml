@@ -93,6 +93,18 @@
             android:padding="10dp"
             android:scaleType="fitCenter"
             android:src="@drawable/uvv_player_player_btn" />
+        <ImageButton
+            android:id="@+id/quick_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/turn_button"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="3dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/uvv_player_player_btn" />
 
         <ImageButton
             android:id="@+id/scale_button"
@@ -112,7 +124,7 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center_vertical"
             android:layout_toLeftOf="@id/scale_button"
-            android:layout_toRightOf="@id/turn_button"
+            android:layout_toRightOf="@id/quick_button"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 

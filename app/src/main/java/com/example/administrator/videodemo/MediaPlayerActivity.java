@@ -86,8 +86,6 @@ public class MediaPlayerActivity extends Activity implements SurfaceHolder.Callb
                 }else{
                     //在指定了MediaPlayer播放的容器后，我们就可以使用prepare或者prepareAsync来准备播放了
 //                    String dataPath = Environment.getExternalStorageDirectory().getPath()+"/test.mp4";
-//                    String dataPath = "http://daily3gp.com/vids/family_guy_penis_car.3gp";
-//                    String dataPath = "http://v.qq.com/x/cover/32kshc0e1wcifxj.html?vid=j03411pm65x";
 //                    String dataPath = "http://www.androidbook.com/akc/filestorage/android/documentfiles/3389/movie.mp4";
                     String dataPath = "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov";
                     Uri uri = Uri.parse(dataPath);

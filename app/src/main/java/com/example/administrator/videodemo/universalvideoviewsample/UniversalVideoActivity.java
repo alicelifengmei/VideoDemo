@@ -18,6 +18,7 @@
 package com.example.administrator.videodemo.universalvideoviewsample;
 
 import android.media.MediaPlayer;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,6 +36,8 @@ public class UniversalVideoActivity extends AppCompatActivity implements Univers
     private static final String SEEK_POSITION_KEY = "SEEK_POSITION_KEY";
 //    private static final String VIDEO_URL = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
     private static final String VIDEO_URL = "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov";
+//    private static final String VIDEO_URL = Environment.getExternalStorageDirectory().getPath()+"/test.mp4";
+//    private static final String VIDEO_URL = "http://www.androidbook.com/akc/filestorage/android/documentfiles/3389/movie.mp4";
 
     UniversalVideoView mVideoView;
     UniversalMediaController mMediaController;
@@ -138,7 +141,6 @@ public class UniversalVideoActivity extends AppCompatActivity implements Univers
             layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT;
             mVideoLayout.setLayoutParams(layoutParams);
             mBottomLayout.setVisibility(View.GONE);
-
         } else {
             ViewGroup.LayoutParams layoutParams = mVideoLayout.getLayoutParams();
             layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT;

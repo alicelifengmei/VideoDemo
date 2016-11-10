@@ -27,6 +27,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -98,6 +99,7 @@ public class UniversalMediaController extends FrameLayout {
     private View mControlLayout;
 
     private View mCenterPlayButton;
+    private ImageButton mQuickButton;
 
     public UniversalMediaController(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -128,6 +130,7 @@ public class UniversalMediaController extends FrameLayout {
         loadingLayout = (ViewGroup) v.findViewById(R.id.loading_layout);
         errorLayout = (ViewGroup) v.findViewById(R.id.error_layout);
         mTurnButton = (ImageButton) v.findViewById(R.id.turn_button);
+        mQuickButton = (ImageButton) v.findViewById(R.id.quick_button);
         mScaleButton = (ImageButton) v.findViewById(R.id.scale_button);
         mCenterPlayButton = v.findViewById(R.id.center_play_btn);
         mBackButton = v.findViewById(R.id.back_btn);
@@ -136,6 +139,18 @@ public class UniversalMediaController extends FrameLayout {
             mTurnButton.requestFocus();
             mTurnButton.setOnClickListener(mPauseListener);
         }
+        if (mQuickButton != null) {//快进5秒
+            mQuickButton.requestFocus();
+            mQuickButton.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mProgress.setProgress(mProgress.getProgress() + 5);
+                    long nowPositon = mProgress.getProgress()*mPlayer.getDuration()/1000L;
+                    mPlayer.seekTo((int)nowPositon);
+                }
+            });
+        }
+
 
         if (mScalable) {
             if (mScaleButton != null) {

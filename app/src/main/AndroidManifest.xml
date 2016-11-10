@@ -12,7 +12,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".universalvideoviewsample.UniversalVideoActivity">
+        <activity android:name=".universalvideoviewsample.UniversalVideoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            >
         <!--<activity android:name=".MediaPlayerActivity">-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
