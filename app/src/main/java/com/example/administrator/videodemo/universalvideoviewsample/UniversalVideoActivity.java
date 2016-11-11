@@ -18,6 +18,7 @@
 package com.example.administrator.videodemo.universalvideoviewsample;
 
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -49,18 +50,14 @@ public class UniversalVideoActivity extends AppCompatActivity implements Univers
     private int mSeekPosition;
     private int cachedHeight;
     private boolean isFullscreen;
+    private int from;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_universal_video);
-        int from = getIntent().getIntExtra("from",1);
-        if(from == 1){
-            VIDEO_URL = Environment.getExternalStorageDirectory().getPath()+"/test.mp4";
-        }else{
-            VIDEO_URL = "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov";
+        from = getIntent().getIntExtra("from",1);
 
-        }
 
         mVideoLayout = findViewById(R.id.video_layout);
         mBottomLayout = findViewById(R.id.bottom_layout);
@@ -117,7 +114,14 @@ public class UniversalVideoActivity extends AppCompatActivity implements Univers
                 videoLayoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
                 videoLayoutParams.height = cachedHeight;
                 mVideoLayout.setLayoutParams(videoLayoutParams);
-                mVideoView.setVideoPath(VIDEO_URL);
+                String uriStr = "android.resource://" + UniversalVideoActivity.this.getPackageName() + "/"+R.raw.test;
+                Uri uri=Uri.parse(uriStr);
+                if(from == 1){
+                    mVideoView.setVideoURI(uri);
+                }else{
+                    VIDEO_URL = "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov";
+                    mVideoView.setVideoPath(VIDEO_URL);
+                }
                 mVideoView.requestFocus();
             }
         });
