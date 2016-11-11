@@ -120,6 +120,7 @@ public class UniversalVideoActivity extends AppCompatActivity implements Univers
                     mVideoView.setVideoURI(uri);
                 }else{
                     VIDEO_URL = "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov";
+
                     mVideoView.setVideoPath(VIDEO_URL);
                 }
                 mVideoView.requestFocus();
