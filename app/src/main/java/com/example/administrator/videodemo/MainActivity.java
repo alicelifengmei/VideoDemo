@@ -16,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
 //        Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath()+"/test.mp4");
         VideoView vvVideo = (VideoView) findViewById(R.id.vv_video);
         vvVideo.setMediaController(new MediaController(this));
-        String dataPath = "http://www.androidbook.com/akc/filestorage/android/documentfiles/3389/movie.mp4";
+//        String dataPath = "http://www.androidbook.com/akc/filestorage/android/documentfiles/3389/movie.mp4";
+//        String dataPath = Environment.getExternalStorageDirectory().getPath()+"/test.mp4";
+        String dataPath = "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov";;
         Uri uri = Uri.parse(dataPath);
         vvVideo.setVideoURI(uri);
         vvVideo.start();

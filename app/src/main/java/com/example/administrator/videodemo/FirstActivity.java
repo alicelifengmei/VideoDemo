@@ -21,7 +21,12 @@ public class FirstActivity extends Activity implements View.OnClickListener{
         Button btn0 = (Button) findViewById(R.id.mp);
         Button btn1 = (Button) findViewById(R.id.mp1);
         Button btn2 = (Button) findViewById(R.id.mp2);
-        btn.setOnClickListener(this);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(FirstActivity.this, MainActivity.class));
+            }
+        });
         btn0.setOnClickListener(this);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -31,9 +36,6 @@ public class FirstActivity extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.videoView:
-                startActivity(new Intent(this, MainActivity.class));
-                break;
             case R.id.mp:
                 startActivity(new Intent(this, MediaPlayerActivity.class));
 

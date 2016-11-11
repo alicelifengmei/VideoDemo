@@ -101,7 +101,7 @@ public class MediaPlayerActivity extends Activity implements SurfaceHolder.Callb
         sfHolder = svVedio.getHolder();
         sfHolder.addCallback(this);
         sfHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
-        mTimer.schedule(mTimerTask, 0, 1000);
+//        mTimer.schedule(mTimerTask, 0, 1000);
     }
 
     public void play(Uri url){
